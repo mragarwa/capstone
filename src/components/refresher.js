@@ -22,6 +22,19 @@ import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
 
 
 export default function Refresher() {
+
+  const [answer1, setAnswer1] = React.useState('');
+  const [answer2, setAnswer2] = React.useState('');
+
+
+  const handleAnswer1 = (event, newAnswer) => {
+    setAnswer1(newAnswer);
+  };
+
+  const handleAnswer2 = (event, newAnswer) => {
+    setAnswer2(newAnswer);
+  };
+
   return (
     <div>
       <Container>
@@ -31,14 +44,16 @@ export default function Refresher() {
       <Box>
       OARS are basic skills practitioners often have in their clinical toolbox already.
       <ToggleButtonGroup
+      value = {answer1}
+      onChange={handleAnswer1}
       exclusive
       aria-label="text alignment"
       align="right"
     >
-      <ToggleButton value="left">
+      <ToggleButton value="true">
         True
       </ToggleButton>
-      <ToggleButton value="center">
+      <ToggleButton value="false">
         False
       </ToggleButton>
     </ToggleButtonGroup>
@@ -46,13 +61,15 @@ export default function Refresher() {
     <Box>
     Questions tend to stop momentum.
     <ToggleButtonGroup
+      value = {answer2}
+      onChange={handleAnswer2}
       exclusive
       aria-label="text alignment"
     >
-      <ToggleButton value="left">
+      <ToggleButton value="true">
         True
       </ToggleButton>
-      <ToggleButton value="center">
+      <ToggleButton value="false">
         False
       </ToggleButton>
     </ToggleButtonGroup>
@@ -67,7 +84,6 @@ export default function Refresher() {
         label="Convert the closed question to open-ended..."
         fullWidth
         variant="outlined"
-        color="secondary"
       />
       </Box>
       <Box>
@@ -77,7 +93,6 @@ export default function Refresher() {
         label="Convert the closed question to open-ended..."
         fullWidth
         variant="outlined"
-        color="secondary"
       />
       </Box>
       <Box>
@@ -96,7 +111,6 @@ export default function Refresher() {
         label="Form a question in response to the client statement..."
         fullWidth
         variant="outlined"
-        color="secondary"
       />
       </Box>
       </Container>
