@@ -87,7 +87,6 @@ export default function Refresher() {
         label="Form a question in response to the client statement..."
         fullWidth
         variant="outlined"
-        color="secondary"
       />
       </Box>
       <Box>
