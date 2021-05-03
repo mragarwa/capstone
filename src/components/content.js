@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -19,7 +19,31 @@ import RoomIcon from '@material-ui/icons/Room';
 import TextField from '@material-ui/core/TextField';
 import ToggleButton from '@material-ui/lab/ToggleButton';
 import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
+import Slider from '@material-ui/core/Slider';
 
+
+const marks = [
+  {
+    value: 0,
+    label: '0°C',
+  },
+  {
+    value: 20,
+    label: '20°C',
+  },
+  {
+    value: 37,
+    label: '37°C',
+  },
+  {
+    value: 100,
+    label: '100°C',
+  },
+];
+
+function valuetext(value) {
+  return `${value}°C`;
+}
 
 
 
@@ -33,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Questions() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
-  const [pinType, setPinType] = React.useState('opp');
+  const [pinType, setPinType] = React.useState('');
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -48,24 +72,35 @@ export default function Questions() {
       <Container>
         <Grid container spacing={3}>
         <Grid item xs={12}>
-          <Paper className={classes.paper}><PlayArrowIcon /></Paper>
+          <Paper className={classes.paper}><PlayArrowIcon /><Slider
+        defaultValue={80}
+        getAriaValueText={valuetext}
+        aria-labelledby="discrete-slider-always"
+        step={10}
+        marks={marks}
+        valueLabelDisplay="on"
+      /></Paper>
         </Grid>
         <Grid item xs={12} sm={4}>
         
-      <Paper>
+        <Paper>
       <Box m={2}>
       <Box fontStyle="italic">
       Transcript
       </Box>
-        <TextareaAutosize aria-label="minimum height" rowsMin={3} placeholder="Personal notes..." />
-        <Typography > To share with Julia:</Typography>
-        <Typography> What is your perspective of what happened at this pin?</Typography>
-        <TextareaAutosize aria-label="minimum height" rowsMin={3} placeholder="Type a response..." />
-        <Typography> What would you categorize this pin as?</Typography>
-        <ButtonGroup disableElevation variant="contained" color="primary">
-            <Button>Strength</Button>
-            <Button>Opportunity</Button>
-        </ButtonGroup>  
+        <Typography><Box fontWeight="bold">0:03</Box>
+        Am I starting now? Um, I guess, should I ask the person to continue thinking out loud? I guess? Yeah, we can share this soon or yeah, you can think out loud for this part too. Okay.
+        <Box fontWeight="bold">0:15</Box>
+        I think I will press join now.
+        <Box fontWeight="bold">0:26</Box>
+        Hmm.
+        <Box fontWeight="bold">0:35</Box>
+        Am I starting up?
+        <Box fontWeight="bold">0:40</Box>
+        What's the problem for you? I guess? Um, yeah, I think it's been a hard time, um, that, um, I was just been unable to concentrate on a lot of things at work. Um, so what made you difficult on them? Concentrating on your stove?
+        <Box fontWeight="bold">1:05</Box>
+        Um, yeah, so I just broke up with my boyfriend, um, a couple weeks ago and I don't know, I guess things have kind of went down since then.
+        </Typography>
         </Box>
         </Paper>
         
@@ -85,7 +120,6 @@ export default function Questions() {
         multiline
         rows={4}
         margin="normal"
-        color="secondary"
       />
 
 <Box fontStyle="italic"> To share with your peer:</Box>
@@ -98,7 +132,6 @@ export default function Questions() {
         multiline
         rows={4}
         margin="normal"
-        color="secondary"
       />
         <Typography> What would you categorize this pin as?</Typography>
         <ToggleButtonGroup

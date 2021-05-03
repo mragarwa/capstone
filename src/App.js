@@ -4,6 +4,7 @@ import { makeStyles, withStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
+import Box from '@material-ui/core/Box';
 import StepLabel from '@material-ui/core/StepLabel';
 import Check from '@material-ui/icons/Check';
 import StepConnector from '@material-ui/core/StepConnector';
@@ -243,6 +244,7 @@ const QontoConnector = withStyles({
           ))}
         </Stepper>
         <div>
+        <Box display="flex" justifyContent="center">
           {activeStep === steps.length ? (
             <div>
               <Typography className={classes.instructions}>
@@ -270,6 +272,7 @@ const QontoConnector = withStyles({
               </div>
             </div>
           )}
+          </Box>
         </div>
       </div>
     );
