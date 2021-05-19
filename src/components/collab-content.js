@@ -1,30 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Fab from '@material-ui/core/Fab';
 import Box from '@material-ui/core/Box';
-import TextareaAutosize from '@material-ui/core/TextareaAutosize';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
-import ButtonGroup from '@material-ui/core/ButtonGroup';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
-import PlayArrowIcon from '@material-ui/icons/PlayArrow';
-import PinDropIcon from '@material-ui/icons/PinDrop';
-import RoomIcon from '@material-ui/icons/Room';
 import TextField from '@material-ui/core/TextField';
-import ToggleButton from '@material-ui/lab/ToggleButton';
-import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
-import audio from './videos/discussion_nv.m4a'
+import audio from './videos/audio.mp3'
 import ReactPlayer from 'react-player'
-import Card from '@material-ui/core/Card';
-import { sizing } from '@material-ui/system';
-import { ArrowRight } from '@material-ui/icons';
 import Icon from '@material-ui/core/Icon';
 import pin from './videos/pin.svg'
 import pin2 from './videos/pin2.svg'
@@ -59,16 +44,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Questions() {
   const classes = useStyles();
-  const [value, setValue] = React.useState(0);
-  const [pinType, setPinType] = React.useState('');
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
-  const handleAlignment = (event, newAlignment) => {
-    setPinType(newAlignment);
-  };
 
   return (
     <div className={classes.root}>

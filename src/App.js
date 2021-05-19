@@ -20,31 +20,9 @@ import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer';
 import PersonIcon from '@material-ui/icons/Person';
 import RefreshIcon from '@material-ui/icons/Refresh';
 import DoneIcon from '@material-ui/icons/Done';
-import NatureIcon from '@material-ui/icons/Nature';
 
 
-const QontoConnector = withStyles({
-    alternativeLabel: {
-      top: 10,
-      left: 'calc(-50% + 16px)',
-      right: 'calc(50% + 16px)',
-    },
-    active: {
-      '& $line': {
-        borderColor: '#784af4',
-      },
-    },
-    completed: {
-      '& $line': {
-        borderColor: '#784af4',
-      },
-    },
-    line: {
-      borderColor: '#eaeaf0',
-      borderTopWidth: 3,
-      borderRadius: 1,
-    },
-  })(StepConnector);
+
   
   const useQontoStepIconStyles = makeStyles({
     root: {
@@ -222,7 +200,7 @@ const QontoConnector = withStyles({
   
   export default function Reflection() {
     const classes = useStyles();
-    const [activeStep, setActiveStep] = React.useState(0);
+    const [activeStep, setActiveStep] = React.useState(1);
     const steps = getSteps();
   
     const handleNext = () => {
@@ -261,7 +239,7 @@ const QontoConnector = withStyles({
             <div>
               <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
               <div>
-                <Button disabled={activeStep === 0} onClick={handleBack} className={classes.button}>
+                <Button disabled={activeStep === 1} onClick={handleBack} className={classes.button}>
                   Back
                 </Button>
                 <Button

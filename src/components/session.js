@@ -1,16 +1,12 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import ReactPlayer from 'react-player'
-import audio from './videos/discussion_nv.m4a'
+import ReactPlayer from 'react-player';
 import Fab from '@material-ui/core/Fab';
-import RoomIcon from '@material-ui/icons/Room';
-import CallEndIcon from '@material-ui/icons/CallEnd';
 import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
-import { Typography, Button } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 import Tooltip from '@material-ui/core/Tooltip';
 import Icon from '@material-ui/core/Icon';
-import pin from './videos/pin.svg'
+import pin from './videos/pin.svg';
 
 const useStyles = makeStyles({
   root: {
@@ -38,6 +34,7 @@ export default function Call () {
       >
         <div></div>
         <div>
+        <Typography variant='h6'>Click on the pin button when the physician responds well or poorly. </Typography>
           <ReactPlayer url='https://www.youtube.com/watch?v=80XyNE89eCs' />
         <Tooltip title="Pinned at 0:30" placement="top">
         <Fab color="#ffffff" aria-label="add" style={{marginBottom:100}}>
