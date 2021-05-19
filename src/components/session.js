@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import ReactPlayer from 'react-player';
 import Fab from '@material-ui/core/Fab';
 import Grid from '@material-ui/core/Grid';
-import { Typography } from '@material-ui/core';
+import { Typography, Box } from '@material-ui/core';
 import Tooltip from '@material-ui/core/Tooltip';
 import Icon from '@material-ui/core/Icon';
 import pin from './videos/pin.svg';
@@ -34,9 +34,12 @@ export default function Call () {
       >
         <div></div>
         <div>
-        <Typography variant='h6'>Click on the pin button when the physician responds well or poorly. </Typography>
-          <ReactPlayer url='https://www.youtube.com/watch?v=80XyNE89eCs' />
-        <Tooltip title="Pinned at 0:30" placement="top">
+          
+        <Typography variant='h6' style={{marginTop:20, marginBottom:40}}>
+        <Box fontWeight="fontWeightBold">
+          Click on the pin button when the physician responds well or poorly. </Box> </Typography>
+          <ReactPlayer style={{marginBottom:10}} url='https://www.youtube.com/watch?v=80XyNE89eCs' />
+        <Tooltip title="Pinned" placement="top">
         <Fab color="#ffffff" aria-label="add" style={{marginBottom:100}}>
         <Icon classes={{root: classes.iconRoot}}>
   <img className={classes.imageIcon} src={pin}/>
