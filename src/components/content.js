@@ -20,6 +20,12 @@ import TextField from '@material-ui/core/TextField';
 import ToggleButton from '@material-ui/lab/ToggleButton';
 import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
 import Slider from '@material-ui/core/Slider';
+import Icon from '@material-ui/core/Icon';
+import pin from './videos/pin.svg'
+import pin2 from './videos/pin2.svg'
+import audio from './videos/discussion_nv.m4a'
+import ReactPlayer from 'react-player'
+import Fab from '@material-ui/core/Fab';
 
 
 const marks = [
@@ -52,6 +58,16 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
   },
+  imageIcon: {
+    height: '100%'
+  },
+  iconRoot: {
+    textAlign: 'center'
+  },
+  fab:{
+    marginLeft: 620,
+    marginRight: 150,
+  }
 }));
 
 export default function Questions() {
@@ -72,14 +88,26 @@ export default function Questions() {
       <Container>
         <Grid container spacing={3}>
         <Grid item xs={12}>
-          <Paper className={classes.paper}><PlayArrowIcon /><Slider
-        defaultValue={80}
-        getAriaValueText={valuetext}
-        aria-labelledby="discrete-slider-always"
-        step={10}
-        marks={marks}
-        valueLabelDisplay="on"
-      /></Paper>
+        <Typography variant='h6'>Listen back to your pins and take notes to discuss with your peer. </Typography>
+<Paper variant='outlined' style={{padding:10, marginTop:10}}>
+          <ReactPlayer
+        url= {audio}
+        controls='true'
+        width="100%"
+        height="50px"
+        style={{marginBottom:5}}
+        />
+         <Fab color="primary" aria-label="add" className={classes.fab}>
+         <Icon classes={{root: classes.iconRoot}}>
+  <img className={classes.imageIcon} src={pin2}/>
+</Icon>
+          </Fab>
+        <Fab color="#ffffff" aria-label="add">
+        <Icon classes={{root: classes.iconRoot}}>
+  <img className={classes.imageIcon} src={pin}/>
+</Icon>          </Fab>
+          
+        </Paper>
         </Grid>
         <Grid item xs={12} sm={4}>
         

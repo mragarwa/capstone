@@ -141,6 +141,9 @@ const QontoConnector = withStyles({
       backgroundColor:
         '#FDA2A9',
     },
+    space: {
+      marginTop: 100,
+    }
   });
   
   function ColorlibStepIcon(props) {
@@ -244,7 +247,7 @@ const QontoConnector = withStyles({
           ))}
         </Stepper>
         <div>
-        <Box display="flex" justifyContent="center">
+        <Box display="flex" justifyContent="center" >
           {activeStep === steps.length ? (
             <div>
               <Typography className={classes.instructions}>
