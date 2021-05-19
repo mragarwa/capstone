@@ -11,7 +11,7 @@ import TextField from '@material-ui/core/TextField';
 import audio from './videos/audio.mp3'
 import ReactPlayer from 'react-player'
 import Icon from '@material-ui/core/Icon';
-import pin from './videos/pin.svg'
+import pinimg from './videos/pin.svg'
 import pin2 from './videos/pin2.svg'
 
 
@@ -76,7 +76,7 @@ export default function Questions() {
           </Fab>
         <Fab color="#ffffff" aria-label="add">
         <Icon classes={{root: classes.iconRoot}}>
-  <img className={classes.imageIcon} src={pin}/>
+  <img className={classes.imageIcon} src={pinimg}/>
 </Icon>          </Fab>
           
         </Paper>

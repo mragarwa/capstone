@@ -24,9 +24,18 @@ const useStyles = makeStyles({
 export default function Call ({ onProgress }) {
   const classes = useStyles();
   const [time, setTime] = useState('0');
-  const [pin, setPin] = useState('0');
+  const [pin, setPin] = useState('');
+  
   const handlePin = () => {
-    setPin(time);
+    const min = Math.floor(time/60);
+    const secs = time%60;
+    var secsString = secs.toString();
+    if (secs < 10) {
+      secsString = ('0').concat(secs.toString());
+    }
+    const played1 = (min.toString()).concat(':');
+    const played2 = (played1).concat(secsString);
+    setPin(played2);
   }
 
   const handleProgress = (state) => {
@@ -50,7 +59,8 @@ export default function Call ({ onProgress }) {
           Click on the pin button when the physician responds well or poorly. </Box> </Typography>
           <ReactPlayer 
            style={{marginBottom:10}} 
-           url='https://www.youtube.com/watch?v=80XyNE89eCs' 
+           url='https://www.youtube.com/watch?v=80XyNE89eCs'
+           controls='true' 
            onProgress={handleProgress} />
        
         <Fab color="#ffffff" aria-label="add" style={{marginRight:10}}>
