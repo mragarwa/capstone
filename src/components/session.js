@@ -1,8 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import ReactPlayer from 'react-player'
-import juliasession from './videos/julia_session_nv.mp4'
-import nancysession from './videos/nancy_session_nv.mp4'
 import audio from './videos/discussion_nv.m4a'
 import Fab from '@material-ui/core/Fab';
 import RoomIcon from '@material-ui/icons/Room';
