@@ -25,8 +25,10 @@ export default function Call ({ onProgress }) {
   const classes = useStyles();
   const [time, setTime] = useState('0');
   const [pin, setPin] = useState('');
-  
+  const [pinList, setPinList] = useState([])
+
   const handlePin = () => {
+    setPinList(pinList.concat([time]));
     const min = Math.floor(time/60);
     const secs = time%60;
     var secsString = secs.toString();
