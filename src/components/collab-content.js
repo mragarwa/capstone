@@ -22,8 +22,6 @@ import ToggleButton from '@material-ui/lab/ToggleButton';
 import ToggleButtonGroup from '@material-ui/lab/ToggleButtonGroup';
 import audio from './videos/discussion_nv.m4a'
 import ReactPlayer from 'react-player'
-import juliadiscussion from './videos/julia_discussion_nv.mp4'
-import nancydiscussion from './videos/nancy_discussion_nv.mp4'
 import Card from '@material-ui/core/Card';
 import { sizing } from '@material-ui/system';
 import { ArrowRight } from '@material-ui/icons';
