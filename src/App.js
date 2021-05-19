@@ -23,7 +23,6 @@ import DoneIcon from '@material-ui/icons/Done';
 
 
 
-  
   const useQontoStepIconStyles = makeStyles({
     root: {
       color: '#eaeaf0',
@@ -47,6 +46,8 @@ import DoneIcon from '@material-ui/icons/Done';
     },
   });
   
+
+  // Handling status of what page in the steppers is active
   function QontoStepIcon(props) {
     const classes = useQontoStepIconStyles();
     const { active, completed } = props;
@@ -62,6 +63,7 @@ import DoneIcon from '@material-ui/icons/Done';
     );
   }
   
+  // Assigning bool value to active status
   QontoStepIcon.propTypes = {
     /**
      * Whether this step is active.
@@ -73,6 +75,7 @@ import DoneIcon from '@material-ui/icons/Done';
     completed: PropTypes.bool,
   };
   
+  // Style for stepper
   const ColorlibConnector = withStyles({
     alternativeLabel: {
       top: 22,
@@ -124,6 +127,7 @@ import DoneIcon from '@material-ui/icons/Done';
     }
   });
   
+  // Icons for each step in stepper
   function ColorlibStepIcon(props) {
     const classes = useColorlibStepIconStyles();
     const { active, completed } = props;
@@ -170,6 +174,7 @@ import DoneIcon from '@material-ui/icons/Done';
     },
     button: {
       marginRight: theme.spacing(1),
+      marginBottom: 40,
     },
     instructions: {
       marginTop: theme.spacing(1),
@@ -177,10 +182,12 @@ import DoneIcon from '@material-ui/icons/Done';
     },
   }));
   
+  // Assigning names to each step
   function getSteps() {
     return ['MI Refresher', 'Practice Session', 'Discussion Prep', 'Collaborative Discussion', 'Self-Reflection', 'Complete'];
   }
   
+  // Assigning content of each step
   function getStepContent(step) {
     switch (step) {
       case 0:
@@ -198,7 +205,8 @@ import DoneIcon from '@material-ui/icons/Done';
     }
   }
   
-  export default function Reflection() {
+  // main function that renders content
+  export default function App() {
     const classes = useStyles();
     const [activeStep, setActiveStep] = React.useState(1);
     const steps = getSteps();
@@ -212,7 +220,7 @@ import DoneIcon from '@material-ui/icons/Done';
     };
   
     const handleReset = () => {
-      setActiveStep(0);
+      setActiveStep(1);
     };
   
     return (
@@ -229,10 +237,10 @@ import DoneIcon from '@material-ui/icons/Done';
           {activeStep === steps.length ? (
             <div>
               <Typography className={classes.instructions}>
-                All steps completed - you&apos;re finished
+              Congratulations! You have successfully finished today’s session in Pin-MI.
               </Typography>
               <Button onClick={handleReset} className={classes.button}>
-                Reset
+              Reset
               </Button>
             </div>
           ) : (
@@ -243,6 +251,7 @@ import DoneIcon from '@material-ui/icons/Done';
                   Back
                 </Button>
                 <Button
+                  disabled={activeStep === 3}
                   variant="contained"
                   color="primary"
                   onClick={handleNext}
